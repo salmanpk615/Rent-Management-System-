@@ -1,0 +1,10 @@
+{% extends 'vehicle/home.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        Are you sure you want to delete this passenger
+        <input type="submit" value="Yes">
+    </form>
+    <button class="btn btn-light mt-2"><a href="{% url 'passenger' vehicle_id %}">Go Back</a></button>
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends 'vehicle/home.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="card rounded-0 border-primary">
+        <div class="card-title container passenger">
+            <div class="card-header">
+                <h1 class="card-header-title">Passengers List</h1>
+                <a type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <i class="tio-add-circle"></i>&nbsp Add</a>
+            </div>
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col"><strong>Name</strong></th>
+                    <th scope="col"><strong>Joining Date</strong></th>
+                    <th scope="col"><strong>Gender</strong></th>
+                    <th scope="col"><strong>Phone</strong></th>
+                    <th scope="col"><strong>Rent Type</strong></th>
+                    <th scope="col"><strong>Fix Rent</strong></th>
+                    <th scope="col"><strong>Edit</strong></th>
+                    <th scope="col"><strong>Delete</strong></th>
+                </tr>
+                </thead>
+                <tbody class="passengertable">
+
+                {% for p in vehicle.passenger_set.all %}
+                    <tr>
+                        <td><span class="full_name-{{ p.id }}">{{ p.full_name }}</span></td>
+                        <td><span class="joining_date-{{ p.id }}">{{ p.joining_date }}</span></td>
+                        <td><span class="gender-{{ p.id }}">{{ p.gender }}</span></td>
+                        <td><span class="phone_number-{{ p.id }}">{{ p.phone_number }}</span></td>
+                        <td><span class="rent_type-{{ p.id }}">{{ p.rent_type }}</span></td>
+                        <td><span class="fix_rent-{{ p.id }}">{{ p.fix_rent }}</span></td>
+                        <td><a class="js-edit btn btn-sm btn-primary edit-passenger" data-toggle="modal"
+                               data-target="#editform"
+                               data-url="{% url 'passenger_update' p.id %}"><i
+                                class="js-edit-icon tio-edit"></i>Edit</a>
+                        <td><a class="js-edit btn btn-sm btn-danger" href="{% url 'passenger_delete' p.id %}">
+                            <i class="js-delete-icon tio-delete"></i>Delete</a></td>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Modal Add-->
+    <div class="modal addPassenger fade bd-example-modal-lg" tabindex="-1" role="dialog"
+         aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="myLargeModalLabel">Add modal</h5>
+                    <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal"
+                            aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-passenger-form" novalidate>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-primary container-fluid" type="submit" value="Save">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <!-- Modal Edit -->
+    <div class="modal editPassenger fade" id="editform" tabindex="-1" role="dialog"
+         aria-labelledby="mySmallModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="mySmallModalLabel">Edit modal</h5>
+                    <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                    </button>
+                </div>
+                <form id="edit-passenger-form" action="" novalidate>
+                    <div class="modal-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-secondary container-fluid" type="submit"
+                               data-url="" value="Update">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+
+
+
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).on('hidden.bs.modal', function () {
+            $('.editPassenger').modal('hide')
+            $('#add-passenger-form, .edit-passenger').trigger('reset')
+            $('div .field_error').remove()
+            $('.form-control').removeClass('is-invalid')
+        })
+
+        $(document).ready(function () {
+            $(".passenger").on("click", ".edit-passenger", function () {
+                var url = $(this).data('url')
+                console.log(url)
+                $('.editPassenger').modal('show')
+                $("#edit-passenger-form").attr("action", url)
+                $.get(url, function (data) {
+                    console.log(data)
+  image                  $("#id_full_name.form-control").val(data.full_name)
+                    $("#id_phone_number.form-control").val(data.phone_number)
+                    $("#id_gender.form-control").val(data.gender)
+                    $("#id_rent_type.form-control").val(data.rent_type)
+                    $("#id_fix_rent.form-control").val(data.fix_rent)
+                })
+            });
+
+            $(document).on('submit', '#add-passenger-form', function (e) {
+                e.preventDefault()
+                var form = $(this)
+                var url = '{% url 'passenger_create' vehicle.id %}'
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: form.serialize(),
+
+                    success: function (response) {
+                        $('.addPassenger').modal('hide');
+                        $(`<tr>
+                        <td>${response.data.full_name}</td>
+                        <td>${response.data.joining_date}</td>
+                        <td>${response.data.gender}</td>
+                        <td>${response.data.phone_number}</td>
+                        <td>${response.data.rent_type}</td>
+                        <td>${response.data.fix_rent}</td>
+                        <td><a class="js-edit btn btn-sm btn-primary edit-passenger" data-toggle="modal"
+                               data-target=".bd-example-modal-sm${response.data.id}"
+                               data-url="/passenger_update/${response.data.id}"><i
+                                class="js-edit-icon tio-edit"></i>Edit</a>
+                        <td><a class="js-edit btn btn-sm btn-danger" href="">
+                            <i class="js-delete-icon tio-delete"></i>Delete</a></td>
+                        </td>
+
+                    </tr>`).prependTo('.passengertable')
+                    },
+
+
+                    error: function (error) {
+                        if (error.status === 400) {
+                            console.log(error)
+                            $.each(error.responseJSON.errors, function (key, value) {
+                                var name = $(`[name=${key}]`)
+                                var fielderror = value[0]
+                                if (name.parent().children("div").is(".field_error")) {
+                                    return false;
+                                } else {
+                                    name.parent().children(':text, input[type=number], #id_gender, #id_rent_type').addClass('is-invalid').parent().append(`<div class='text-danger field_error '>* ${fielderror}</div>`)
+                                }
+                            })
+                        } else {
+                            alert("Internal 500 server error.")
+                        }
+                    }
+                })
+            })
+        })
+        ;
+
+        $(document).on('submit', '#edit-passenger-form', function (e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = $(this).attr("action");
+            console.log(url)
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: form.serialize(),
+
+                success: function (response) {
+                    console.log(response)
+                    $('.editPassenger').modal('hide');
+                    $(`.full_name-${response.data.id}`).text(response.data.full_name)
+                    $(`.joining_date-${response.data.id}`).text(response.data.joining_date)
+                    $(`.gender-${response.data.id}`).text(response.data.gender)
+                    $(`.phone-number-${response.data.id}`).text(response.data.phone_number)
+                    $(`.rent_type-${response.data.id}`).text(response.data.rent_type)
+                    $(`.fix_rent-${response.data.id}`).text(response.data.fix_rent)
+                },
+                error: function (error) {
+                    if (error.status === 400) {
+                        console.log(error)
+                        $.each(error.responseJSON.errors, function (key, value) {
+                            var name = $(`[name=${key}]`)
+                            var fielderror = value[0]
+                            if (name.parent().children("div").is(".field_error")) {
+                                return false;
+                            } else {
+                                name.parent().children(':text, input[type=number], #id_gender, #id_rent_type').addClass('is-invalid').parent().append(`<div class='text-danger field_error '>* ${fielderror}</div>`)
+                            }
+                        })
+                    } else {
+                        alert("Internal 500 server error.")
+                    }
+                }
+            })
+        })
+
+    </script>
+{% endblock %}
+
+
+
+

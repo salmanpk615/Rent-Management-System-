@@ -1,0 +1,33 @@
+{% extends 'vehicle/home.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row gx-2 gx-lg-3">
+        {% for v in vehicle_list %}
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                <div class="card h-100">
+                    <img src="{{ v.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ v.name }}</h5>
+                        <p class="card-text"><strong>Model: </strong>{{ v.vehicle_number }}</p>
+                        <p class="card-text"><strong>Rent: </strong>{{ v.monthly_rent }}</p>
+                        <p class="card-text"><strong>Provider: </strong>{{ v.vehicle_provider }}</p>
+                        <div class="list-group list-group-horizontal">
+                        <a class="list-group-item d-sm-flex align-items-sm-center" href="{% url 'passenger' v.id %}">
+                            <i class="tio-group-equal"></i></a>
+                        <a class="list-group-item d-sm-flex align-items-sm-center" href="{% url 'expense' v.id %}">
+                            <i class="tio-credit-card"></i></a>
+                        <a class="list-group-item d-sm-flex align-items-sm-center" href="{% url 'rent' v.id %}">
+                            <i class="tio-dollar"></i></a>
+                        <a class="list-group-item d-sm-flex align-items-sm-center" href="{% url 'local_rent' v.id %}">
+                            <i class="tio-dollar-outlined"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+

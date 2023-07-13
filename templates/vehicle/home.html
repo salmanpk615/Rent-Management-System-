@@ -1,0 +1,1705 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Title -->
+    <title>Dashboard | Front - Admin &amp; Dashboard Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-set/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/chart.js/dist/Chart.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
+
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
+
+<script src="{% static 'assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js' %}"></script>
+
+
+<!-- ========== HEADER ========== -->
+
+<header id="header"
+        class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+    <div class="navbar-nav-wrap">
+        <div class="navbar-brand-wrapper">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% static 'home.html' %}" aria-label="Front">
+                <img class="navbar-brand-logo" src="{% static 'assets/svg/logos/logo.svg' %}" alt="Logo">
+                <img class="navbar-brand-logo-mini" src="{% static 'assets/svg/logos/logo-short.svg' %}" alt="Logo">
+            </a>
+            <!-- End Logo -->
+        </div>
+
+        <div class="navbar-nav-wrap-content-left">
+            <!-- Navbar Vertical Toggle -->
+            <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+                <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+                   data-placement="right" title="Collapse"></i>
+                <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+                   data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                   data-toggle="tooltip" data-placement="right" title="Expand"></i>
+            </button>
+            <!-- End Navbar Vertical Toggle -->
+
+            <!-- Search Form -->
+            <div class="d-none d-md-block">
+                <form class="position-relative">
+                    <!-- Input Group -->
+                    <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="tio-search"></i>
+                            </div>
+                        </div>
+                        <input type="search" class="js-form-search form-control" placeholder="Search in front"
+                               aria-label="Search in front"
+                               data-hs-form-search-options='{
+                           "clearIcon": "#clearSearchResultsIcon",
+                           "dropMenuElement": "#searchDropdownMenu",
+                           "dropMenuOffset": 20,
+                           "toggleIconOnFocus": true,
+                           "activeClass": "focus"
+                         }'>
+                        <a class="input-group-append" href="javascript:;">
+                    <span class="input-group-text">
+                      <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                    </span>
+                        </a>
+                    </div>
+                    <!-- End Input Group -->
+
+                    <!-- Card Search Content -->
+                    <div id="searchDropdownMenu"
+                         class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                        <!-- Body -->
+                        <div class="card-body-height py-3">
+                            <small class="dropdown-header mb-n2">Recent searches</small>
+
+                            <div class="dropdown-item bg-transparent text-wrap my-2">
+                      <span class="h4 mr-1">
+                        <a class="btn btn-xs btn-soft-dark btn-pill" href="./index.html">
+                          Gulp <i class="tio-search ml-1"></i>
+                        </a>
+                      </span>
+                                <span class="h4">
+                        <a class="btn btn-xs btn-soft-dark btn-pill" href="./index.html">
+                          Notification panel <i class="tio-search ml-1"></i>
+                        </a>
+                      </span>
+                            </div>
+
+                            <div class="dropdown-divider my-3"></div>
+
+                            <small class="dropdown-header mb-n2">Tutorials</small>
+
+                            <a class="dropdown-item my-2" href="./index.html">
+                                <div class="media align-items-center">
+                        <span class="icon icon-xs icon-soft-dark icon-circle mr-2">
+                          <i class="tio-tune"></i>
+                        </span>
+
+                                    <div class="media-body text-truncate">
+                                        <span>How to set up Gulp?</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item my-2" href="./index.html">
+                                <div class="media align-items-center">
+                        <span class="icon icon-xs icon-soft-dark icon-circle mr-2">
+                          <i class="tio-paint-bucket"></i>
+                        </span>
+
+                                    <div class="media-body text-truncate">
+                                        <span>How to change theme color?</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="dropdown-divider my-3"></div>
+
+                            <small class="dropdown-header mb-n2">Members</small>
+
+                            <a class="dropdown-item my-2" href="./index.html">
+                                <div class="media align-items-center">
+                                    <img class="avatar avatar-xs avatar-circle mr-2"
+                                         src="./assets/img/160x160/img10.jpg" alt="Image Description">
+                                    <div class="media-body text-truncate">
+                                        <span>Amanda Harvey <i class="tio-verified text-primary" data-toggle="tooltip"
+                                                               data-placement="top" title="Top endorsed"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item my-2" href="./index.html">
+                                <div class="media align-items-center">
+                                    <img class="avatar avatar-xs avatar-circle mr-2" src="./assets/img/160x160/img3.jpg"
+                                         alt="Image Description">
+                                    <div class="media-body text-truncate">
+                                        <span>David Harrison</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item my-2" href="./index.html">
+                                <div class="media align-items-center">
+                                    <div class="avatar avatar-xs avatar-soft-info avatar-circle mr-2">
+                                        <span class="avatar-initials">A</span>
+                                    </div>
+                                    <div class="media-body text-truncate">
+                                        <span>Anne Richard</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Body -->
+
+                        <!-- Footer -->
+                        <a class="card-footer text-center" href="./index.html">
+                            See all results
+                            <i class="tio-chevron-right"></i>
+                        </a>
+                        <!-- End Footer -->
+                    </div>
+                    <!-- End Card Search Content -->
+                </form>
+            </div>
+            <!-- End Search Form -->
+        </div>
+
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content-right">
+            <!-- Navbar -->
+
+            <!-- End Navbar -->
+        </div>
+        <!-- End Secondary Content -->
+    </div>
+</header>
+
+
+<!-- ========== END HEADER ========== -->
+
+<!-- ========== MAIN CONTENT ========== -->
+<!-- Navbar Vertical -->
+
+<aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+    <div class="navbar-vertical-container">
+        <div class="navbar-vertical-footer-offset">
+            <div class="navbar-brand-wrapper justify-content-between">
+                <!-- Logo -->
+
+
+                <a class="navbar-brand" href="{% static 'home.html' %}" aria-label="Front">
+                    <img class="navbar-brand-logo" src="{% static 'assets/svg/logos/logo.svg' %}" alt="Logo">
+                    <img class="navbar-brand-logo-mini" src="{% static 'assets/svg/logos/logo-short.svg' %}" alt="Logo">
+                </a>
+
+                <!-- End Logo -->
+
+                <!-- Navbar Vertical Toggle -->
+                <button type="button"
+                        class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                    <i class="tio-clear tio-lg"></i>
+                </button>
+                <!-- End Navbar Vertical Toggle -->
+            </div>
+
+            <!-- Content -->
+            <div class="navbar-vertical-content">
+                <ul class="navbar-nav navbar-nav-lg nav-tabs">
+                    <!-- Dashboards -->
+                    <li class="navbar-vertical-aside-has-menu show">
+                        <a class="js-navbar-vertical-aside-menu-link nav-link" href="" title="Dashboards">
+                            <i class="tio-home-vs-1-outlined nav-icon"></i>
+                            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
+                        </a>
+
+                    </li>
+                    <!-- End Dashboards -->
+
+
+                    <!-- Pages -->
+
+                    <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                        <li class="navbar-vertical-aside-has-menu show ">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link" href="{% url 'vehicle' %}" title="Vehicles">
+                                <i class="tio-car"></i>
+                                {#                                    <span class="tio-circle nav-indicator-icon"></span>#}
+                                 <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Vehicles</span>
+{#                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Vehicles</span>#}
+                            </a>
+                        </li>
+
+                        <!-- End Pages -->
+
+
+                        <!-- End Front Builder -->
+
+                        <!-- Help -->
+                        <li class="navbar-vertical-aside-has-menu nav-footer-item ">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
+                               title="Help">
+                                <i class="tio-home-vs-1-outlined nav-icon"></i>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Help</span>
+                            </a>
+
+                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Resources &amp; tutorials">
+                                        <i class="tio-book-outlined dropdown-item-icon"></i> Resources &amp; tutorials
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Keyboard shortcuts">
+                                        <i class="tio-command-key dropdown-item-icon"></i> Keyboard shortcuts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Connect other apps">
+                                        <i class="tio-alt dropdown-item-icon"></i> Connect other apps
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="What's new?">
+                                        <i class="tio-gift dropdown-item-icon"></i> What's new?
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Contact support">
+                                        <i class="tio-chat-outlined dropdown-item-icon"></i> Contact support
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End Help -->
+
+                        <!-- Language -->
+                        <li class="navbar-vertical-aside-has-menu nav-footer-item ">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;"
+                               title="Language">
+                                <img class="avatar avatar-xss avatar-circle"
+                                     src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="United States Flag">
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Language</span>
+                            </a>
+
+                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="English (US)">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Flag">
+                                        English (US)
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="English (UK)">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Flag">
+                                        English (UK)
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Deutsch">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Flag">
+                                        Deutsch
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Dansk">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Flag">
+                                        Dansk
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Italiano">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Flag">
+                                        Italiano
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="中文 (繁體)">
+                                        <img class="avatar avatar-xss avatar-circle mr-2"
+                                             src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Flag">
+                                        中文 (繁體)
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End Language -->
+                    </ul>
+            </div>
+            <!-- End Content -->
+
+            <!-- Footer -->
+            <div class="navbar-vertical-footer">
+                <ul class="navbar-vertical-footer-list">
+                    <li class="navbar-vertical-footer-list-item">
+                        <!-- Unfold -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="javascript:;"
+                               data-hs-unfold-options='{
+                        "target": "#styleSwitcherDropdown",
+                        "type": "css-animation",
+                        "animationIn": "fadeInRight",
+                        "animationOut": "fadeOutRight",
+                        "hasOverlay": true,
+                        "smartPositionOff": true
+                       }'>
+                                <i class="tio-tune"></i>
+                            </a>
+                        </div>
+                        <!-- End Unfold -->
+                    </li>
+
+                    <li class="navbar-vertical-footer-list-item">
+                        <!-- Other Links -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="javascript:;"
+                               data-hs-unfold-options='{
+                        "target": "#otherLinksDropdown",
+                        "type": "css-animation",
+                        "animationIn": "slideInDown",
+                        "hideOnScroll": true
+                       }'>
+                                <i class="tio-help-outlined"></i>
+                            </a>
+
+                            <div id="otherLinksDropdown"
+                                 class="hs-unfold-content dropdown-unfold dropdown-menu navbar-vertical-footer-dropdown">
+                                <span class="dropdown-header">Help</span>
+                                <a class="dropdown-item" href="#">
+                                    <i class="tio-book-outlined dropdown-item-icon"></i>
+                                    <span class="text-truncate pr-2" title="Resources &amp; tutorials">Resources &amp; tutorials</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="tio-command-key dropdown-item-icon"></i>
+                                    <span class="text-truncate pr-2"
+                                          title="Keyboard shortcuts">Keyboard shortcuts</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="tio-alt dropdown-item-icon"></i>
+                                    <span class="text-truncate pr-2"
+                                          title="Connect other apps">Connect other apps</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="tio-gift dropdown-item-icon"></i>
+                                    <span class="text-truncate pr-2" title="What's new?">What's new?</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <span class="dropdown-header">Contacts</span>
+                                <a class="dropdown-item" href="#">
+                                    <i class="tio-chat-outlined dropdown-item-icon"></i>
+                                    <span class="text-truncate pr-2" title="Contact support">Contact support</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Other Links -->
+                    </li>
+
+                    <li class="navbar-vertical-footer-list-item">
+                        <!-- Language -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="javascript:;"
+                               data-hs-unfold-options='{
+                        "target": "#languageDropdown",
+                        "type": "css-animation",
+                        "animationIn": "slideInDown",
+                        "hideOnScroll": true
+                       }'>
+                                <img class="avatar avatar-xss avatar-circle"
+                                     src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="United States Flag">
+                            </a>
+
+                            <div id="languageDropdown"
+                                 class="hs-unfold-content dropdown-unfold dropdown-menu navbar-vertical-footer-dropdown">
+                                <span class="dropdown-header">Select language</span>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="English">English (US)</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="English">English (UK)</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="Deutsch">Deutsch</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="Dansk">Dansk</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="Italiano">Italiano</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img class="avatar avatar-xss avatar-circle mr-2"
+                                         src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Flag">
+                                    <span class="text-truncate pr-2" title="中文 (繁體)">中文 (繁體)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Language -->
+                    </li>
+                </ul>
+            </div>
+            <!-- End Footer -->
+        </div>
+    </div>
+</aside>
+
+
+<!-- End Navbar Vertical -->
+
+<main id="content" role="main" class="main pointer-event">
+    <!-- Content of Body -->
+    <div class="content container-fluid">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+
+    <!-- End Footer -->
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
+<!-- ========== SECONDARY CONTENTS ========== -->
+<!-- Keyboard Shortcuts -->
+<div id="keyboardShortcutsSidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow">
+    <div class="card card-lg sidebar-card">
+        <div class="card-header">
+            <h4 class="card-header-title">Keyboard shortcuts</h4>
+
+            <!-- Toggle Button -->
+            <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark ml-2" href="javascript:;"
+               data-hs-unfold-options='{
+                "target": "#keyboardShortcutsSidebar",
+                "type": "css-animation",
+                "animationIn": "fadeInRight",
+                "animationOut": "fadeOutRight",
+                "hasOverlay": true,
+                "smartPositionOff": true
+               }'>
+                <i class="tio-clear tio-lg"></i>
+            </a>
+            <!-- End Toggle Button -->
+        </div>
+
+        <!-- Body -->
+        <div class="card-body sidebar-body sidebar-scrollbar">
+            <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+                <div class="list-group-item">
+                    <h5 class="mb-1">Formatting</h5>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span class="font-weight-bold">Bold</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">b</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <em>italic</em>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">i</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <u>Underline</u>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">u</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <s>Strikethrough</s>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">s</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span class="small">Small text</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">s</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <mark>Highlight</mark>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">e</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+                <div class="list-group-item">
+                    <h5 class="mb-1">Insert</h5>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Mention person <a href="#">(@Brian)</a></span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">@</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Link to doc <a href="#">(+Meeting notes)</a></span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">+</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <a href="#">#hashtag</a>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">#hashtag</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Date</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">/date</kbd>
+                            <kbd class="d-inline-block mb-1">Space</kbd>
+                            <kbd class="d-inline-block mb-1">/datetime</kbd>
+                            <kbd class="d-inline-block mb-1">/datetime</kbd>
+                            <kbd class="d-inline-block mb-1">Space</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Time</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">/time</kbd>
+                            <kbd class="d-inline-block mb-1">Space</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Note box</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">/note</kbd>
+                            <kbd class="d-inline-block mb-1">Enter</kbd>
+                            <kbd class="d-inline-block mb-1">/note red</kbd>
+                            <kbd class="d-inline-block mb-1">/note red</kbd>
+                            <kbd class="d-inline-block mb-1">Enter</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+                <div class="list-group-item">
+                    <h5 class="mb-1">Editing</h5>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Find and replace</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">r</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Find next</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">n</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Find previous</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">p</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Indent</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Tab</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Un-indent</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Tab</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Move line up</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1"><i class="tio-arrow-large-upward-outlined"></i></kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Move line down</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1"><i
+                                class="tio-arrow-large-downward-outlined font-size-sm"></i></kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Add a comment</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">m</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Undo</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">z</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Redo</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">y</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group list-group-sm list-group-flush list-group-no-gutters">
+                <div class="list-group-item">
+                    <h5 class="mb-1">Application</h5>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Create new doc</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">n</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Present</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">p</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Share</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">s</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Search docs</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">o</kbd>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span>Keyboard shortcuts</span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd
+                                class="d-inline-block mb-1">/</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Body -->
+    </div>
+</div>
+<!-- End Keyboard Shortcuts -->
+
+<!-- Activity -->
+<div id="activitySidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow">
+    <div class="card card-lg sidebar-card">
+        <div class="card-header">
+            <h4 class="card-header-title">Activity stream</h4>
+
+            <!-- Toggle Button -->
+            <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark ml-2" href="javascript:;"
+               data-hs-unfold-options='{
+              "target": "#activitySidebar",
+              "type": "css-animation",
+              "animationIn": "fadeInRight",
+              "animationOut": "fadeOutRight",
+              "hasOverlay": true,
+              "smartPositionOff": true
+             }'>
+                <i class="tio-clear tio-lg"></i>
+            </a>
+            <!-- End Toggle Button -->
+        </div>
+
+        <!-- Body -->
+        <div class="card-body sidebar-body sidebar-scrollbar">
+            <!-- Step -->
+            <ul class="step step-icon-sm step-avatar-sm">
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <div class="step-avatar">
+                            <img class="step-avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+                        </div>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">Iana Robinson</h5>
+
+                            <p class="font-size-sm mb-1">Added 2 files to task <a class="text-uppercase" href="#"><i
+                                    class="tio-folder-bookmarked"></i> Fd-7</a></p>
+
+                            <ul class="list-group list-group-sm">
+                                <!-- List Item -->
+                                <li class="list-group-item list-group-item-light">
+                                    <div class="row gx-1">
+                                        <div class="col-6">
+                                            <div class="media">
+                              <span class="mt-1 mr-2">
+                                <img class="avatar avatar-xs" src="./assets/svg/brands/excel.svg"
+                                     alt="Image Description">
+                              </span>
+                                                <div class="media-body text-truncate">
+                                                    <span class="d-block font-size-sm text-dark text-truncate"
+                                                          title="weekly-reports.xls">weekly-reports.xls</span>
+                                                    <small class="d-block text-muted">12kb</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="media">
+                              <span class="mt-1 mr-2">
+                                <img class="avatar avatar-xs" src="./assets/svg/brands/word.svg"
+                                     alt="Image Description">
+                              </span>
+                                                <div class="media-body text-truncate">
+                                                    <span class="d-block font-size-sm text-dark text-truncate"
+                                                          title="weekly-reports.xls">weekly-reports.xls</span>
+                                                    <small class="d-block text-muted">4kb</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End List Item -->
+                            </ul>
+
+                            <small class="text-muted text-uppercase">Now</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-dark">B</span>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">Bob Dean</h5>
+
+                            <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i
+                                    class="tio-folder-bookmarked"></i> Fr-6</a> as <span
+                                    class="badge badge-soft-success badge-pill"><span
+                                    class="legend-indicator bg-success"></span>"Completed"</span></p>
+
+                            <small class="text-muted text-uppercase">Today</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <div class="step-avatar">
+                            <img class="step-avatar-img" src="./assets/img/160x160/img3.jpg" alt="Image Description">
+                        </div>
+
+                        <div class="step-content">
+                            <h5 class="h5 mb-1">Crane</h5>
+
+                            <p class="font-size-sm mb-1">Added 5 card to <a href="#">Payments</a></p>
+
+                            <ul class="list-group list-group-sm">
+                                <li class="list-group-item list-group-item-light">
+                                    <div class="row gx-1">
+                                        <div class="col">
+                                            <img class="img-fluid rounded ie-sidebar-activity-img"
+                                                 src="./assets/svg/illustrations/card-1.svg" alt="Image Description">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-fluid rounded ie-sidebar-activity-img"
+                                                 src="./assets/svg/illustrations/card-2.svg" alt="Image Description">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-fluid rounded ie-sidebar-activity-img"
+                                                 src="./assets/svg/illustrations/card-3.svg" alt="Image Description">
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <div class="text-center">
+                                                <a href="#">+2</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <small class="text-muted text-uppercase">May 12</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-info">D</span>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">David Lidell</h5>
+
+                            <p class="font-size-sm mb-1">Added a new member to Front Dashboard</p>
+
+                            <small class="text-muted text-uppercase">May 15</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <div class="step-avatar">
+                            <img class="step-avatar-img" src="./assets/img/160x160/img7.jpg" alt="Image Description">
+                        </div>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">Rachel King</h5>
+
+                            <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i
+                                    class="tio-folder-bookmarked"></i> Fr-3</a> as <span
+                                    class="badge badge-soft-success badge-pill"><span
+                                    class="legend-indicator bg-success"></span>"Completed"</span></p>
+
+                            <small class="text-muted text-uppercase">Apr 29</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <div class="step-avatar">
+                            <img class="step-avatar-img" src="./assets/img/160x160/img5.jpg" alt="Image Description">
+                        </div>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">Finch Hoot</h5>
+
+                            <p class="font-size-sm mb-1">Earned a "Top endorsed" <i
+                                    class="tio-verified text-primary"></i> badge</p>
+
+                            <small class="text-muted text-uppercase">Apr 06</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+
+                <!-- Step Item -->
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-soft-primary">
+                    <i class="tio-user"></i>
+                  </span>
+
+                        <div class="step-content">
+                            <h5 class="mb-1">Project status updated</h5>
+
+                            <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i
+                                    class="tio-folder-bookmarked"></i> Fr-3</a> as <span
+                                    class="badge badge-soft-primary badge-pill"><span
+                                    class="legend-indicator bg-primary"></span>"In progress"</span></p>
+
+                            <small class="text-muted text-uppercase">Feb 10</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- End Step Item -->
+            </ul>
+            <!-- End Step -->
+
+            <a class="btn btn-block btn-white" href="javascript:;">View all <i class="tio-chevron-right"></i></a>
+        </div>
+        <!-- End Body -->
+    </div>
+</div>
+<!-- End Activity -->
+
+<!-- Welcome Message Modal -->
+<div class="modal fade" id="welcomeMessageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-close">
+                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal"
+                        aria-label="Close">
+                    <i class="tio-clear tio-lg"></i>
+                </button>
+            </div>
+            <!-- End Header -->
+
+            <!-- Body -->
+            <div class="modal-body p-sm-5">
+                <div class="text-center">
+                    <div class="w-75 w-sm-50 mx-auto mb-4">
+                        <img class="img-fluid" src="./assets/svg/illustrations/graphs.svg" alt="Image Description">
+                    </div>
+
+                    <h4 class="h1">Welcome to Front</h4>
+
+                    <p>We're happy to see you in our community.</p>
+                </div>
+            </div>
+            <!-- End Body -->
+
+            <!-- Footer -->
+            <div class="modal-footer d-block text-center py-sm-5">
+                <small class="text-cap mb-4">Trusted by the world's best teams</small>
+
+                <div class="w-85 mx-auto">
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/gitlab-gray.svg"
+                                 alt="Image Description">
+                        </div>
+                        <div class="col">
+                            <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/fitbit-gray.svg"
+                                 alt="Image Description">
+                        </div>
+                        <div class="col">
+                            <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/flow-xo-gray.svg"
+                                 alt="Image Description">
+                        </div>
+                        <div class="col">
+                            <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/layar-gray.svg"
+                                 alt="Image Description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+        </div>
+    </div>
+</div>
+<!-- End Welcome Message Modal -->
+
+<!-- Create a new user Modal -->
+<div class="modal fade" id="inviteUserModal" tabindex="-1" role="dialog" aria-labelledby="inviteUserModalTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <form class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+                <h4 id="inviteUserModalTitle" class="modal-title">Invite users</h4>
+
+                <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal"
+                        aria-label="Close">
+                    <i class="tio-clear tio-lg"></i>
+                </button>
+            </div>
+            <!-- End Header -->
+
+            <!-- Body -->
+            <div class="modal-body">
+                <!-- Form Group -->
+                <div class="form-group">
+                    <div class="input-group input-group-merge mb-2 mb-sm-0">
+                        <div class="input-group-prepend" id="fullName">
+                  <span class="input-group-text">
+                    <i class="tio-search"></i>
+                  </span>
+                        </div>
+
+                        <input type="text" class="form-control" name="fullName" placeholder="Search name or emails"
+                               aria-label="Search name or emails" aria-describedby="fullName">
+
+                        <div class="input-group-append input-group-append-last-sm-down-none">
+                            <!-- Select -->
+                            <div id="permissionSelect" class="select2-custom select2-custom-right">
+                                <select class="js-select2-custom custom-select" size="1" style="opacity: 0;"
+                                        data-hs-select2-options='{
+                              "dropdownParent": "#permissionSelect",
+                              "minimumResultsForSearch": "Infinity",
+                              "dropdownAutoWidth": true,
+                              "dropdownWidth": "11rem"
+                            }'>
+                                    <option value="guest" selected>Guest</option>
+                                    <option value="can edit">Can edit</option>
+                                    <option value="can comment">Can comment</option>
+                                    <option value="full access">Full access</option>
+                                </select>
+                            </div>
+                            <!-- End Select -->
+
+                            <a class="btn btn-primary d-none d-sm-block" href="javascript:;">Invite</a>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-block btn-primary d-sm-none" href="javascript:;">Invite</a>
+                </div>
+                <!-- End Form Group -->
+
+                <div class="form-row">
+                    <h5 class="col modal-title">Invite users</h5>
+
+                    <div class="col-auto">
+                        <a class="d-flex align-items-center font-size-sm text-body" href="#">
+                            <img class="avatar avatar-xss mr-2" src="./assets/svg/brands/gmail.svg"
+                                 alt="Image Description">
+                            Import contacts
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="mt-2">
+
+                <ul class="list-unstyled list-unstyled-py-4">
+                    <!-- List Group Item -->
+                    <li>
+                        <div class="media">
+                            <div class="avatar avatar-sm avatar-circle mr-3">
+                                <img class="avatar-img" src="./assets/img/160x160/img10.jpg" alt="Image Description">
+                            </div>
+
+                            <div class="media-body">
+                                <div class="row align-items-center">
+                                    <div class="col-sm">
+                                        <h5 class="text-body mb-0">Amanda Harvey <i class="tio-verified text-primary"
+                                                                                    data-toggle="tooltip"
+                                                                                    data-placement="top"
+                                                                                    title="Top endorsed"></i></h5>
+                                        <span class="d-block font-size-sm">amanda@example.com</span>
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <!-- Select -->
+                                        <div id="inviteUserSelect1"
+                                             class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
+                                            <select class="js-select2-custom custom-select-sm" size="1"
+                                                    style="opacity: 0;"
+                                                    data-hs-select2-options='{
+                                    "dropdownParent": "#inviteUserSelect1",
+                                    "minimumResultsForSearch": "Infinity",
+                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="guest" selected>Guest</option>
+                                                <option value="can edit">Can edit</option>
+                                                <option value="can comment">Can comment</option>
+                                                <option value="full access">Full access</option>
+                                                <option value="remove"
+                                                        data-option-template='<span class="text-danger">Remove</span>'>
+                                                    Remove
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <!-- End Select -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End List Group Item -->
+
+                    <!-- List Group Item -->
+                    <li>
+                        <div class="media">
+                            <div class="avatar avatar-sm avatar-circle mr-3">
+                                <img class="avatar-img" src="./assets/img/160x160/img3.jpg" alt="Image Description">
+                            </div>
+
+                            <div class="media-body">
+                                <div class="row align-items-center">
+                                    <div class="col-sm">
+                                        <h5 class="text-body mb-0">David Harrison</h5>
+                                        <span class="d-block font-size-sm">david@example.com</span>
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <!-- Select -->
+                                        <div id="inviteUserSelect2"
+                                             class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
+                                            <select class="js-select2-custom custom-select-sm" size="1"
+                                                    style="opacity: 0;"
+                                                    data-hs-select2-options='{
+                                    "dropdownParent": "#inviteUserSelect2",
+                                    "minimumResultsForSearch": "Infinity",
+                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="guest" selected>Guest</option>
+                                                <option value="can edit">Can edit</option>
+                                                <option value="can comment">Can comment</option>
+                                                <option value="full access">Full access</option>
+                                                <option value="remove"
+                                                        data-option-template='<span class="text-danger">Remove</span>'>
+                                                    Remove
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <!-- End Select -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End List Group Item -->
+
+                    <!-- List Group Item -->
+                    <li>
+                        <div class="media">
+                            <div class="avatar avatar-sm avatar-circle mr-3">
+                                <img class="avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+                            </div>
+
+                            <div class="media-body">
+                                <div class="row align-items-center">
+                                    <div class="col-sm">
+                                        <h5 class="text-body mb-0">Ella Lauda <i class="tio-verified text-primary"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="top"
+                                                                                 title="Top endorsed"></i></h5>
+                                        <span class="d-block font-size-sm">Markvt@example.com</span>
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <!-- Select -->
+                                        <div id="inviteUserSelect4"
+                                             class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
+                                            <select class="js-select2-custom custom-select-sm" size="1"
+                                                    style="opacity: 0;"
+                                                    data-hs-select2-options='{
+                                    "dropdownParent": "#inviteUserSelect4",
+                                    "minimumResultsForSearch": "Infinity",
+                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="guest" selected>Guest</option>
+                                                <option value="can edit">Can edit</option>
+                                                <option value="can comment">Can comment</option>
+                                                <option value="full access">Full access</option>
+                                                <option value="remove"
+                                                        data-option-template='<span class="text-danger">Remove</span>'>
+                                                    Remove
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <!-- End Select -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End List Group Item -->
+
+                    <!-- List Group Item -->
+                    <li>
+                        <div class="media">
+                            <div class="avatar avatar-sm avatar-soft-dark avatar-circle mr-3">
+                                <span class="avatar-initials">B</span>
+                            </div>
+
+                            <div class="media-body">
+                                <div class="row align-items-center">
+                                    <div class="col-sm">
+                                        <h5 class="text-body mb-0">Bob Dean</h5>
+                                        <span class="d-block font-size-sm">bob@example.com</span>
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <!-- Select -->
+                                        <div id="inviteUserSelect3"
+                                             class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
+                                            <select class="js-select2-custom custom-select-sm" size="1"
+                                                    style="opacity: 0;"
+                                                    data-hs-select2-options='{
+                                    "dropdownParent": "#inviteUserSelect3",
+                                    "minimumResultsForSearch": "Infinity",
+                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="guest" selected>Guest</option>
+                                                <option value="can edit">Can edit</option>
+                                                <option value="can comment">Can comment</option>
+                                                <option value="full access">Full access</option>
+                                                <option value="remove"
+                                                        data-option-template='<span class="text-danger">Remove</span>'>
+                                                    Remove
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <!-- End Select -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End List Group Item -->
+                </ul>
+            </div>
+            <!-- End Body -->
+
+            <!-- Footer -->
+            <div class="modal-footer justify-content-start">
+                <div class="row align-items-center flex-grow-1 mx-n2">
+                    <div class="col-sm-9 mb-2 mb-sm-0">
+                        <input type="hidden" id="inviteUserPublicClipboard"
+                               value="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/">
+
+                        <p class="modal-footer-text">The public share <a href="#">link settings</a>
+                            <i class="tio-help-outlined" data-toggle="tooltip" data-placement="top"
+                               title="The public share link allows people to view the project without giving access to full collaboration features."></i>
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 text-sm-right">
+                        <a class="js-clipboard btn btn-sm btn-white text-nowrap" href="javascript:;"
+                           data-toggle="tooltip" data-placement="top" title="Copy to clipboard!"
+                           data-hs-clipboard-options='{
+                    "type": "tooltip",
+                    "successText": "Copied!",
+                    "contentTarget": "#inviteUserPublicClipboard",
+                    "container": "#inviteUserModal"
+                   }'>
+                            <i class="tio-link mr-1"></i> Copy link</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+        </form>
+    </div>
+</div>
+<!-- End Create a new user Modal -->
+<!-- ========== END SECONDARY CONTENTS ========== -->
+
+<!-- JS Global Compulsory  -->
+<script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="{% static 'assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js' %}"></script>
+<script src="{% static 'assets/vendor/hs-unfold/dist/hs-unfold.min.js' %}"></script>
+<script src="{% static 'assets/vendor/hs-form-search/dist/hs-form-search.min.js' %}"></script>
+<script src="{% static 'assets/vendor/select2/dist/js/select2.full.min.js' %}"></script>
+<script src="{% static 'assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+<script src="{% static 'assets/vendor/chart.js.extensions/chartjs-extensions.js' %}"></script>
+<script src="{% static 'assets/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/vendor/datatables/media/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/vendor/datatables.net.extensions/select/select.min.js' %}"></script>
+<script src="{% static 'assets/vendor/clipboard/dist/clipboard.min.js' %}"></script>
+
+
+<!-- JS Front -->
+<script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+    $(document).on('ready', function () {
+        // =======================================================
+
+
+        // BUILDER TOGGLE INVOKER
+        // =======================================================
+        $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+            $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+        });
+
+
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
+        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
+        $('.js-nav-tooltip-link').tooltip({boundary: 'window'})
+
+        $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+            if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                return false;
+            }
+        });
+
+
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
+        $('.js-hs-unfold-invoker').each(function () {
+            var unfold = new HSUnfold($(this)).init();
+        });
+
+
+        // INITIALIZATION OF FORM SEARCH
+        // =======================================================
+        $('.js-form-search').each(function () {
+            new HSFormSearch($(this)).init()
+        });
+
+
+        // INITIALIZATION OF SELECT2
+        // =======================================================
+        $('.js-select2-custom').each(function () {
+            var select2 = $.HSCore.components.HSSelect2.init($(this));
+        });
+
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
+        Chart.plugins.unregister(ChartDataLabels);
+
+        $('.js-chart').each(function () {
+            $.HSCore.components.HSChartJS.init($(this));
+        });
+
+        var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+
+        // CALL WHEN TAB IS CLICKED
+        // =======================================================
+        $('[data-toggle="chart-bar"]').click(function (e) {
+            let keyDataset = $(e.currentTarget).attr('data-datasets')
+
+            if (keyDataset === 'lastWeek') {
+                updatingChart.data.labels = ["Apr 22", "Apr 23", "Apr 24", "Apr 25", "Apr 26", "Apr 27", "Apr 28", "Apr 29", "Apr 30", "Apr 31"];
+                updatingChart.data.datasets = [
+                    {
+                        "data": [120, 250, 300, 200, 300, 290, 350, 100, 125, 320],
+                        "backgroundColor": "#377dff",
+                        "hoverBackgroundColor": "#377dff",
+                        "borderColor": "#377dff"
+                    },
+                    {
+                        "data": [250, 130, 322, 144, 129, 300, 260, 120, 260, 245, 110],
+                        "backgroundColor": "#e7eaf3",
+                        "borderColor": "#e7eaf3"
+                    }
+                ];
+                updatingChart.update();
+            } else {
+                updatingChart.data.labels = ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10"];
+                updatingChart.data.datasets = [
+                    {
+                        "data": [200, 300, 290, 350, 150, 350, 300, 100, 125, 220],
+                        "backgroundColor": "#377dff",
+                        "hoverBackgroundColor": "#377dff",
+                        "borderColor": "#377dff"
+                    },
+                    {
+                        "data": [150, 230, 382, 204, 169, 290, 300, 100, 300, 225, 120],
+                        "backgroundColor": "#e7eaf3",
+                        "borderColor": "#e7eaf3"
+                    }
+                ]
+                updatingChart.update();
+            }
+        })
+
+
+        // INITIALIZATION OF BUBBLE CHARTJS WITH DATALABELS PLUGIN
+        // =======================================================
+        $('.js-chart-datalabels').each(function () {
+            $.HSCore.components.HSChartJS.init($(this), {
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        datalabels: {
+                            anchor: function (context) {
+                                var value = context.dataset.data[context.dataIndex];
+                                return value.r < 20 ? 'end' : 'center';
+                            },
+                            align: function (context) {
+                                var value = context.dataset.data[context.dataIndex];
+                                return value.r < 20 ? 'end' : 'center';
+                            },
+                            color: function (context) {
+                                var value = context.dataset.data[context.dataIndex];
+                                return value.r < 20 ? context.dataset.backgroundColor : context.dataset.color;
+                            },
+                            font: function (context) {
+                                var value = context.dataset.data[context.dataIndex],
+                                    fontSize = 25;
+
+                                if (value.r > 50) {
+                                    fontSize = 35;
+                                }
+
+                                if (value.r > 70) {
+                                    fontSize = 55;
+                                }
+
+                                return {
+                                    weight: 'lighter',
+                                    size: fontSize
+                                };
+                            },
+                            offset: 2,
+                            padding: 0
+                        }
+                    }
+                },
+            });
+        });
+
+
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
+        $('.js-daterangepicker').daterangepicker();
+
+        $('.js-daterangepicker-times').daterangepicker({
+            timePicker: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(32, 'hour'),
+            locale: {
+                format: 'M/DD hh:mm A'
+            }
+        });
+
+        var start = moment();
+        var end = moment();
+
+        function cb(start, end) {
+            $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+        }
+
+        $('#js-daterangepicker-predefined').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+        cb(start, end);
+
+
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
+        var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+            select: {
+                style: 'multi',
+                selector: 'td:first-child input[type="checkbox"]',
+                classMap: {
+                    checkAll: '#datatableCheckAll',
+                    counter: '#datatableCounter',
+                    counterInfo: '#datatableCounterInfo'
+                }
+            },
+            language: {
+                zeroRecords: '<div class="text-center p-4">' +
+                    '<img class="mb-3" src="{% static 'assets/svg/illustrations/sorry.svg' %}" alt="Image Description" style="width: 7rem;">' +
+                    '<p class="mb-0">No data to show</p>' +
+                    '</div>'
+            }
+        });
+
+        $('.js-datatable-filter').on('change', function () {
+            var $this = $(this),
+                elVal = $this.val(),
+                targetColumnIndex = $this.data('target-column-index');
+
+            datatable.column(targetColumnIndex).search(elVal).draw();
+        });
+
+        $('#datatableSearch').on('mouseup', function (e) {
+            var $input = $(this),
+                oldValue = $input.val();
+
+            if (oldValue == "") return;
+
+            setTimeout(function () {
+                var newValue = $input.val();
+
+                if (newValue == "") {
+                    // Gotcha
+                    datatable.search('').draw();
+                }
+            }, 1);
+        });
+
+
+        // INITIALIZATION OF CLIPBOARD
+        // =======================================================
+        $('.js-clipboard').each(function () {
+            var clipboard = $.HSCore.components.HSClipboard.init(this);
+        });
+    });
+</script>
+{% block script %}{% endblock %}
+<!-- IE Support -->
+<script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="{% static 'assets/vendor/babel-polyfill/polyfill.min.js' %}"><\/script>');
+</script>
+</body>
+</html>
